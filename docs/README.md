@@ -34,7 +34,7 @@ struct {
 * The name of the device's Web Interface is [homespanhub.local](http://homespanhub.local).  The normal device-ID suffix has been supressed using the method `homeSpan.setHostNameSuffix("")`
 * The device must be rebooted (either manually or via the Web Interface) for updates to propogate to your Home App.
 * If the Home App does not reflect your changes shortly after rebooting, try restarting the Home App.
-* The Web Interface is implemented using the ESP32-Arduino standard WebServer Library, which is compatible with the WiFi/TCP stack used by HomeSpan.  Note that ESPAsyncWebServer requires a different TCP stack and cannot be used with HomeSpan.
+* The Web Interface is implemented using the ESP32-Arduino standard WebServer Library, which is compatible with the WiFi/TCP stack used by HomeSpan.  ***Note that ESPAsyncWebServer requires a different TCP stack and cannot be used with HomeSpan.***
 * Notable configuration settings:
   * HomeSpan normally uses port 80 for HomeKit communications.  To allow the Web Interface to use port 80 instead, the HomeSpan port must be changed to something else using `homeSpan.setPortNum(port)`.  In this sketch the port was changed to 1201 (an arbitrary number).
   * HomeSpan normally reserves 8 TCP connections for HomeKit controllers.  Since WebServer consumes 2 TCP sockets (one for the server, and one for the client), we need to instruct HomeSpan not use use all 8 TCP connections for itself.  Additionally, this sketch enables OTA updates, which also needs a TCP socket.  The total number of TCP sockets reserved for HomeSpan must therefore be reduced to 5 using the method `homeSpan.setMaxConnections(5)`.
