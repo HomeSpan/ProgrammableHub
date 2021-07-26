@@ -30,9 +30,9 @@ struct {
 * The above structure is stored as an NVS *blob* name *LIGHTDATA* in an NVS space name *LIGHTS*.
 * Upon startup, the sketch creates a Bridge as Accessory #1, and then dynamically adds Accessories #2 through #17, for each Light-01 through Light-16 that has a defined ESP32 pin.
 * Non-dimmable lights are implemented with just on/off functionality using `Characteristic::On()`.
-* Dimmable lights are implemented with an additional brightness control using `Characteristic:;Brightness()`.
+* Dimmable lights are implemented with an additional brightness control using `Characteristic::Brightness()`.
 * The device must be rebooted (either manually or via the Web Interface) for updates to propogate to your Home App.
-* The name of the device's Web Interface is [homespanhub.local](homespanhub.local).  The normal device-ID suffix has been supressed using the method `homeSpan.setHostNameSuffix("")`
+* The name of the device's Web Interface is [homespanhub.local](http://homespanhub.local).  The normal device-ID suffix has been supressed using the method `homeSpan.setHostNameSuffix("")`
 * The Web Interface is implemented using the ESP32-Arduino standard WebServer Library, which is compatible with the WiFi/TCP stack used by HomeSpan.  Note that ESPAsyncWebServer requires a different TCP stack and cannot be used with HomeSpan.
 * Notable configuration settings:
   * HomeSpan normally uses port 80 for HomeKit communications.  To allow the Web Interface to use port 80 instead, the HomeSpan port must be changed to something else using `homeSpan.setPortNum(port)`.  In this sketch the port was changed to 1201 (an arbitrary number).
