@@ -32,6 +32,9 @@ struct {
 * Non-dimmable lights are implemented with just on/off functionality using `Characteristic::On()`.
 * Dimmable lights are implemented with an additional brightness control using `Characteristic::Brightness()`.
 * The name of the device's Web Interface is [homespanhub.local](http://homespanhub.local).  The normal device-ID suffix has been supressed using the method `homeSpan.setHostNameSuffix("")`
+
+[WebInterface](images/WebInterface.png)
+
 * The device must be rebooted (either manually or via the Web Interface) for updates to propogate to your Home App.
 * If the Home App does not reflect your changes shortly after rebooting, try restarting the Home App.
 * The Web Interface is implemented using the ESP32-Arduino standard WebServer Library, which is compatible with the WiFi/TCP stack used by HomeSpan.  ***Note that ESPAsyncWebServer requires a different TCP stack and cannot be used with HomeSpan.***
